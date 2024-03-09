@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>829,2790</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1114,3183</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
@@ -66,9 +66,10 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="00001:Process" sap:VirtualizedContainerService.HintSize="839,2765" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="00001:Process" sap:VirtualizedContainerService.HintSize="1087,3118" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtResultTable" />
       <Variable x:TypeArguments="x:Boolean" Name="blFileExists" />
@@ -79,7 +80,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="00002:Invoke Log workflow" sap:VirtualizedContainerService.HintSize="797,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_48" UnSafe="False" WorkflowFileName="General\Log.xaml">
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="00002:Invoke Log workflow" sap:VirtualizedContainerService.HintSize="1025,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_48" UnSafe="False" WorkflowFileName="General\Log.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_platformJobId">[in_Config("platformJobId").ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_strLoginfo">Process</InArgument>
@@ -87,14 +88,14 @@
         <InArgument x:TypeArguments="x:Int32" x:Key="in_intStepType">1</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtResultTable]" DisplayName="00003:Read Range 执行结果表" sap:VirtualizedContainerService.HintSize="797,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[Path.Combine(System.IO.Directory.GetCurrentDirectory,&quot;WorkFolder\Output\环球期货保证金每日更新_运行结果表.xlsx&quot;)]" />
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtResultTable]" DisplayName="00004:For Each Row" sap:VirtualizedContainerService.HintSize="797,1538" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtResultTable]" DisplayName="00003:Read Range 执行结果表" sap:VirtualizedContainerService.HintSize="1025,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[Path.Combine(System.IO.Directory.GetCurrentDirectory,&quot;WorkFolder\Output\环球期货保证金每日更新_运行结果表.xlsx&quot;)]" />
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtResultTable]" DisplayName="00004:For Each Row" sap:VirtualizedContainerService.HintSize="1025,1840" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <TryCatch DisplayName="00005:Try Catch 步骤匹配" sap:VirtualizedContainerService.HintSize="566,1390" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch DisplayName="00005:Try Catch 步骤匹配" sap:VirtualizedContainerService.HintSize="975,1688" sap2010:WorkflowViewState.IdRef="TryCatch_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -102,7 +103,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <If Condition="[row(&quot;执行结果&quot;).ToString.Contains(&quot;成功&quot;)]" DisplayName="00006:If 是否已执行成功" sap:VirtualizedContainerService.HintSize="917,1394" sap2010:WorkflowViewState.IdRef="If_3">
+              <If Condition="[row(&quot;执行结果&quot;).ToString.Contains(&quot;成功&quot;)]" DisplayName="00006:If 是否已执行成功" sap:VirtualizedContainerService.HintSize="937,1450" sap2010:WorkflowViewState.IdRef="If_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -110,17 +111,17 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <ui:LogMessage DisplayName="00007:Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[row(&quot;步骤名称&quot;).ToString+&quot;：已是执行成功，不再次执行该步骤&quot;]" />
+                  <ui:LogMessage DisplayName="00007:Log Message" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[row(&quot;步骤名称&quot;).ToString+&quot;：已是执行成功，不再次执行该步骤&quot;]" />
                 </If.Then>
                 <If.Else>
-                  <Sequence DisplayName="00008:步骤匹配" sap:VirtualizedContainerService.HintSize="538,1246" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="00008:步骤匹配" sap:VirtualizedContainerService.HintSize="558,1286" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="00009:Assign 开始时间" sap:VirtualizedContainerService.HintSize="496,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign DisplayName="00009:Assign 开始时间" sap:VirtualizedContainerService.HintSize="496,84" sap2010:WorkflowViewState.IdRef="Assign_1">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Object">[row("开始时间")]</OutArgument>
                       </Assign.To>
@@ -275,10 +276,10 @@
               </If>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="532,1228" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,23" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -286,15 +287,15 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="00023:异常处理" sap:VirtualizedContainerService.HintSize="526,1159" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="00023:异常处理" sap:VirtualizedContainerService.HintSize="546,1180" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="00024:Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[row(&quot;步骤名称&quot;).ToString+&quot;：出现异常，异常原因：&quot;+exception.Message]" />
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="00025:Invoke TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_73" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
+                    <ui:LogMessage DisplayName="00024:Log Message" sap:VirtualizedContainerService.HintSize="484,96" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[row(&quot;步骤名称&quot;).ToString+&quot;：出现异常，异常原因：&quot;+exception.Message]" />
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="00025:Invoke TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="484,88" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_73" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="in_Folder">Exceptions_Screenshots</InArgument>
                         <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath" />
@@ -358,7 +359,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <If Condition="[dtResultTable.Select(&quot;执行结果 &lt;&gt; '成功' &quot;).Count &gt; 0]" DisplayName="00032:If 结果表步骤是否都为成功" sap:VirtualizedContainerService.HintSize="797,51" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[dtResultTable.Select(&quot;执行结果 &lt;&gt; '成功' &quot;).Count &gt; 0]" DisplayName="00032:If 结果表步骤是否都为成功" sap:VirtualizedContainerService.HintSize="797,54" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -393,8 +394,8 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:PathExists DisplayName="00039:Path Exists PDF文件是否生成" Exists="[blFileExists]" sap:VirtualizedContainerService.HintSize="797,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path.Combine(in_Config(&quot;Form页PDF文件保存路径&quot;).ToString, in_DateDay.ToString(&quot;yyyyMMdd&quot;), in_DateDay.ToString(&quot;ddMMyyyy&quot;)+&quot;.pdf&quot;)]" PathType="File" />
-    <If Condition="[blFileExists]" DisplayName="00040:If 结果表步骤是否与PDF文件是否生成" sap:VirtualizedContainerService.HintSize="797,422" sap2010:WorkflowViewState.IdRef="If_2">
+    <ui:PathExists DisplayName="00039:Path Exists PDF文件是否生成" Exists="[blFileExists]" sap:VirtualizedContainerService.HintSize="797,92" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path.Combine(in_Config(&quot;Form页PDF文件保存路径&quot;).ToString, in_DateDay.ToString(&quot;yyyyMMdd&quot;), in_DateDay.ToString(&quot;ddMMyyyy&quot;)+&quot;.pdf&quot;)]" PathType="File" />
+    <If Condition="[blFileExists]" DisplayName="00040:If 结果表步骤是否与PDF文件是否生成" sap:VirtualizedContainerService.HintSize="797,438" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
